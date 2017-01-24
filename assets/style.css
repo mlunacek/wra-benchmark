@@ -2,3 +2,17 @@
 .page-active{
   font-weight: 800;
 }
+
+.wrapper{
+  max-width: 900px !important;
+}
+
+#app{
+  max-width: 800px;
+}
+
+.logincontainer{
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
