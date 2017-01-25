@@ -13,6 +13,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import { Sparklines, SparklinesLine, SparklinesBars } from 'react-sparklines';
 
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+
 class FormRow extends Component{
 
   render(){
@@ -21,23 +24,26 @@ class FormRow extends Component{
     const data = this.props.data[category][key];
     return (<tr key={key}>
       <td style={{width: 20 + 'em'}}> {key} </td>
-      <td style={{width: 5 + 'em'}}>
-        <input type="number"
+      <td style={{width: 8 + 'em'}}>
+        <input className="mdl-textfield__input"
+             type="number"
              style={{width: 100 + '%'}}
+             id={key}
              value={data.value}
              onChange={this.props.onChange.bind(this, category, key, "value")}
-             >
-      </input>
+            />
       </td>
       <td style={{width: 5 + 'em'}}>
         {`${data.value}%`}
       </td>
       <td style={{width: 25 + 'em'}}>
-        <input type="text"
-             style={{width: 100 + '%'}}
-             value={data.comment}
-             onChange={this.props.onChange.bind(this, category, key, "comment")}>
-      </input>
+      <input className="mdl-textfield__input"
+           type="text"
+           style={{width: 100 + '%'}}
+           id={key}
+           value={data.comment}
+           onChange={this.props.onChange.bind(this, category, key, "comment")}
+          />
       </td>
     </tr>)
   }
@@ -52,13 +58,14 @@ class FormRowSummary extends Component{
 
     return (<tr key={key}>
       <td style={{width: 20 + 'em'}}> {key} </td>
-      <td style={{width: 5 + 'em'}}>
-        <input type="number"
-             style={{width: 100 + '%'}}
-             value={data.value}
-             onChange={this.props.onChange.bind(this, category, key, "value")}
-             >
-      </input>
+      <td style={{width: 10 + 'em'}}>
+      <input className="mdl-textfield__input"
+           type="number"
+           style={{width: 100 + '%'}}
+           id={key}
+           value={data.value}
+           onChange={this.props.onChange.bind(this, category, key, "value")}
+          />
       </td>
       <td>
         {this.props.units}
@@ -87,7 +94,7 @@ class FormSection extends Component{
     return (
       <div>
         <h3>{name}</h3>
-        <table className="table-condensed table-hover">
+        <table className="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
             <thead>
                <tr>
                   <th>Category</th>
@@ -155,7 +162,7 @@ class FormIndex extends Component{
         return(
             <div>
             <h3>Enery Yield Summary</h3>
-            <table className="table-condensed table-hover">
+            <table className="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
             <tbody>
                 {windFarmNamePlate}
                 {grossOuput}
@@ -283,9 +290,13 @@ class FormIndex extends Component{
             </TabList>
 
             <TabPanel>
-            <button className="btn btn-primary" onClick={this.onSubmit.bind(this)}>Submit</button>
-            <Link className="btn btn-link" to="/signout">logout</Link>
+            <div>
+              <RaisedButton style={{ marginTop: 50, marginRight: 20 }}
+                            onClick={this.onSubmit.bind(this)}
+                            label="Submit"/>
 
+              <Link className="btn btn-link" to="/signout">logout</Link>
+            </div>
             {this.energyYieldSummary()}
             {this.availability()}
             {this.wakeEffect()}
@@ -294,8 +305,13 @@ class FormIndex extends Component{
             {this.environmental()}
             {this.curtailments()}
 
-            <button className="btn btn-primary" onClick={this.onSubmit.bind(this)}>Submit</button>
-            <Link className="btn btn-link" to="/signout">logout</Link>
+            <div>
+              <RaisedButton style={{ marginTop: 50, marginRight: 20 }}
+                            onClick={this.onSubmit.bind(this)}
+                            label="Submit"/>
+
+              <Link className="btn btn-link" to="/signout">logout</Link>
+            </div>
 
             </TabPanel>
 
@@ -306,13 +322,14 @@ class FormIndex extends Component{
                          ref='fileInput'
                          onChange={this.onChange.bind(this)} />
 
-                 <button className="btn btn-default"
-                         disabled={this.props.active}
-                         onClick={this.upload.bind(this)} >upload</button>
+                   <div>
+                     <RaisedButton style={{ marginTop: 50, marginRight: 20 }}
+                                   onClick={this.upload.bind(this)}
+                                   label="Upload"/>
 
-                  <span> {this.props.message} </span>
+                     <Link className="btn btn-link" to="/signout">logout</Link>
+                   </div>
 
-                  <Link className="btn btn-link" to="/signout">logout</Link>
               </div>
             </TabPanel>
 

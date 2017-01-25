@@ -24,6 +24,7 @@ url: "https://mlunacek.github.io/" # the base hostname & protocol for your site,
 twitter_username: jekyllrb
 github_username:  jekyll
 
+category-list:  [navigation, pages]
 # Build settings
 markdown: kramdown
 # theme: minima
@@ -35,6 +36,9 @@ exclude:
 sass:
     sass_dir: _sass
     sourcemap: false
+
+disqus:
+  shortname: wra-benchmark
 
 # source:      src
 # destination: dist

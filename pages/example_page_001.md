@@ -1,5 +1,6 @@
 ---
 layout: page
+comments: true
 title: Example one  # <- you can change this
 permalink: example_one  # < - and this too
 group: pages

@@ -7,6 +7,4 @@ permalink: /
 
 Change me in `pages/index.md`
 
-### Links
-
-More links.
+<hr>

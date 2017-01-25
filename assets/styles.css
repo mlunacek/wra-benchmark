@@ -62,14 +62,18 @@ a img{
 
 
 .android-logo-image {
-  height: 28px;
-  width: 140px;
+  height: 55px;
+  width: 170px;
 }
 
 
 .android-header {
   overflow: visible;
   background-color: white;
+  /*Monte*/
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
   .android-header .material-icons {
@@ -175,14 +179,17 @@ a img{
   height: 300px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/slide01.jpg') center 30% no-repeat;
+  /*background: url('images/slide01.jpg') center 30% no-repeat;*/
+  background: url('images/wind.jpg') no-repeat 30% bottom;
+
   background-size: cover;
 }
 
 .logo-font {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1;
-  color: #767777;
+  /*color: #767777;*/
+  color: white;
   font-weight: 500;
 }
 
@@ -470,6 +477,7 @@ a img{
     display: none;
   }
 
+
   .android-title {
     display: none !important;
   }
@@ -478,7 +486,7 @@ a img{
     display: block !important;
     position: absolute;
     left: calc(50% - 70px);
-    top: 12px;
+    /*top: 12px;*/
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 

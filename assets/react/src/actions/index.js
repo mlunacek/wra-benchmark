@@ -16,7 +16,7 @@ export const RESET_ERROR = "RESET_ERROR";
 
 const APP_URL = 'http://localhost:8000';
 
-const API_URL = 'http://localhost:7000';
+const API_URL = 'http://localhost:5000';
 const AUTH_URL = 'http://localhost:5000'
 
 // const AUTH_URL = 'https://api.hpc.nrel.gov/esif/api/auth/login';
