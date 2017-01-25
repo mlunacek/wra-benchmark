@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Example one
-permalink: example_one
+title: Example one  # <- you can change this
+permalink: example_one  # < - and this too
 group: pages
 ---
 
