@@ -32,6 +32,9 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+sass:
+    sass_dir: _sass
+    sourcemap: false
 
 # source:      src
 # destination: dist

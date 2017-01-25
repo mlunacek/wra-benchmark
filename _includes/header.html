@@ -1,46 +1,78 @@
-<header class="site-header" role="banner">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ "/" | relative_url}}">{{ site.title | escape }}</a>
-
-    <nav class="site-nav">
-      <span class="menu-icon">
-        <svg viewBox="0 0 18 15" width="18px" height="15px">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </span>
-
-      <div class="trigger">
-
-<div class="dropdown">
-<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-<span class="caret"></span></button>
-<ul class="dropdown-menu">
-  <li><a href="#">HTML</a></li>
-  <li><a href="#">CSS</a></li>
-  <li><a href="#">JavaScript</a></li>
-</ul>
-</div>
 
 
 
-      {% assign group = 'navigation' %}
-      {% for node in site.pages %}
-        {% if group == node.group %}
-          {% if page.title == node.title %}
-          <a class="page-active page-link" href="{{ site.baseurl }}{{node.url}}">{{node.title | escape }}</a>
-          {% else %}
-          <a class="page-link" href="{{ site.baseurl }}{{node.url}}">{{node.title}}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+      <div class="mdl-layout__header-row">
+        <a class="android-title mdl-layout-title" href="{{ site.baseurl }}{{"/"}}">
+          <img class="android-logo-image" src="{{ site.baseurl }}{{"assets/images/android-logo.png"}}">
+        </a>
+
+        <!-- Add spacer, to align navigation to the right in desktop -->
+        <div class="android-header-spacer mdl-layout-spacer"></div>
+        <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width"> </div>
+
+        <!-- Navigation -->
+        <div class="android-navigation-container">
+          <nav class="android-navigation mdl-navigation">
+
+            {% assign group = 'navigation' %}
+              {% for node in site.pages %}
+                {% if group == node.group %}
+                  {% if page.title == node.title %}
+                  <a class="page-active mdl-navigation__link mdl-typography--text-uppercase" href="{{ site.baseurl }}{{node.url}}">{{node.title | escape }}</a>
+                  {% else %}
+                  <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ site.baseurl }}{{node.url}}">{{node.title}}</a>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+
+          </nav>
+        </div>
+        <a class="android-mobile-title mdl-layout-title" href="{{ site.baseurl }}{{"/"}}">
+          <img class="android-logo-image" src="{{ site.baseurl }}{{"assets/images/android-logo.png"}}">
+        </a>
       </div>
+    </div>
 
-    </nav>
+    <div class="android-drawer mdl-layout__drawer">
+      <span class="mdl-layout-title">
+        <img class="android-logo-image" src="{{ site.baseurl }}{{"assets/images/android-logo-white.png"}}">
+      </span>
+      <nav class="mdl-navigation">
 
-  </div>
+        {% assign group = 'navigation' %}
+          {% for node in site.pages %}
+            {% if group == node.group %}
+              {% if page.title == node.title %}
+              <a class="page-active mdl-navigation__link mdl-typography--text-uppercase" href="{{ site.baseurl }}{{node.url}}">{{node.title | escape }}</a>
+              {% else %}
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ site.baseurl }}{{node.url}}">{{node.title}}</a>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
 
-</header>
+        <div class="android-drawer-separator"></div>
+        <span class="mdl-navigation__link" href="">pages</span>
+
+        {% assign group = 'pages' %}
+          {% for node in site.pages %}
+            {% if group == node.group %}
+              {% if page.title == node.title %}
+              <a class="page-active mdl-navigation__link mdl-typography--text-uppercase" href="{{ site.baseurl }}{{node.url}}">{{node.title | escape }}</a>
+              {% else %}
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ site.baseurl }}{{node.url}}">{{node.title}}</a>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+
+        <div class="android-drawer-separator"></div>
+        <span class="mdl-navigation__link" href="">Resources</span>
+        <a class="mdl-navigation__link" href="">Official blog</a>
+        <a class="mdl-navigation__link" href="">Android on Google+</a>
+        <a class="mdl-navigation__link" href="">Android on Twitter</a>
+
+      </nav>
+    </div>
+
+      <div class="android-content mdl-layout__content">
