@@ -3,4 +3,10 @@ layout: home
 permalink: /
 ---
 
-a little content
+### Content
+
+Change me in `pages/index.md`
+
+### Links
+
+More links.
